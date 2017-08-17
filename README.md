@@ -79,7 +79,7 @@ ZF1 https://docs.zendframework.com/tutorials/
 Po2Mo https://po2mo.net/
 Bootstrap http://getbootstrap.com/getting-started/ for css framework!
 
-git clone git@bitbucket.org:Tonytoons/zf1-smarty.git
+git clone git@bitbucket.org:Tonytoons/zf3-starter-kit.git
 
 
 #Upgrade to php7 on C9. #follow below.
