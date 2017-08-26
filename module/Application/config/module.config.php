@@ -114,12 +114,12 @@ return array(
     //'Zend\Db',
     'Db' => array(
         'driver' => 'Pdo',
-        'dsn' => 'mysql:dbname=dbname;host=db host',   
+        'dsn' => 'mysql:dbname=nrru_db;host=nrrudb.cflaqvv1n1fo.ap-southeast-1.rds.amazonaws.com',   
         'driver_options' => array( 
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
         ),
-        'username' => 'username',
-        'password' => 'password', 
+        'username' => 'nrru_db',
+        'password' => 'nrru6969', 
     ),
     'service_manager' => array( 
         'factories' => array(
