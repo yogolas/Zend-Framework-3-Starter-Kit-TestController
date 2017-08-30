@@ -12,7 +12,7 @@ Hi there! Welcome to easy PHP framework for beginners!
 
 Good for beginner who have no idea about PHP framework, let start from easy code here.
 
-To get you started, let download all files and test run with Apache or use Clound9(c9.io).
+To get you started, let download all files and test run with Apache or try on Clound9(c9.io).
 
 1) Start from ./module/Application/config/module.config.php
 
