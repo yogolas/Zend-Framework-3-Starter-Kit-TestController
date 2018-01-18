@@ -82,32 +82,29 @@ Bootstrap http://getbootstrap.com/getting-started/ for css framework!
 git clone git@bitbucket.org:Tonytoons/zf3-starter-kit.git
 
 
-#Upgrade to php7 on C9. #follow below.
-
+#Upgrade to php7.1 on C9. #follow below.
+PHP 7.1
 sudo add-apt-repository ppa:ondrej/php -y
-
 sudo apt-get update -y
-
-sudo apt-get install php7.0-curl php7.0-cli php7.0-dev php7.0-gd php7.0-intl php7.0-mcrypt php7.0-json php7.0-mysql php7.0-opcache php7.0-bcmath php7.0-mbstring php7.0-soap php7.0-xml php7.0-zip -y
-
+ 
+sudo apt-get install php7.1-curl php7.1-cli php7.1-dev php7.1-gd php7.1-intl php7.1-mcrypt php7.1-json php7.1-mysql php7.1-opcache php7.1-bcmath php7.1-mbstring php7.1-soap php7.1-xml php7.1-zip -y
+ 
 sudo mv /etc/apache2/envvars /etc/apache2/envvars.bak
-
 sudo apt-get remove libapache2-mod-php5 -y
-
-sudo apt-get install libapache2-mod-php7.0 -y
-
+sudo apt-get install libapache2-mod-php7.1 -y
 sudo cp /etc/apache2/envvars.bak /etc/apache2/envvars
+ 
+sudo a2dismod php5
+sudo a2enmod php7.1
 
 sudo apt-get purge php*
 
-sudo apt-get install php7.0-mysql php7.0-curl php7.0-json php7.0-cgi  php7.0 libapache2-mod-php7.0
+sudo apt-get install php7.1-mysql php7.1-curl php7.1-json php7.1-cgi  php7.1 libapache2-mod-php7.1
 
-sudo apt-get install php7.0-mbstring
-
+sudo apt-get install php7.1-mbstring
 sudo apt-get autoremove
-
 sudo service apache2 restart
-
-sudo apt-get install php7.0-simplexml
-
+sudo apt-get install php7.1-simplexml
+ 
+sudo service apache2
 sudo service apache2 restart
