@@ -1,5 +1,5 @@
 <?php
-return array( 
+return array(
     'router' => array(
         'routes' => array(
             'home' => array(
@@ -23,6 +23,23 @@ return array(
                     ),
                     'defaults' => array(
                         'controller' => 'Application\Controller\Index',
+                        'action' => 'index',
+                        'id' => '',
+                        'lang' => 'th',
+                    ),
+                ),
+            ),
+            'test' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route'    => '/test[/:action[/:id]]',
+                    'constraints' => array(
+                        'lang'   => '[a-zA-Z]*',
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id' => '[0-9_-]*[a-zA-Z0-9_-]*',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Test',
                         'action' => 'index',
                         'id' => '',
                         'lang' => 'th',
@@ -72,10 +89,11 @@ return array(
         'invokables' => array(
             //add controller
             'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Test' => 'Application\Controller\TestController',
             //'Application\Controller\Xxx' => 'Application\Controller\XxxController',
         ),
     ),
-     
+
     'view_manager' => array(
         'base_path' => '/',
         'doctype' => 'HTML5',
@@ -83,6 +101,10 @@ return array(
             #index
             'application/index/index' => __DIR__ . '/../view/index/index.phtml',
             'application/index/user' => __DIR__ . '/../view/index/user.phtml',
+            #test
+            'application/test/test1' => __DIR__ . '/../view/test/test1.phtml',
+            'application/test/test2' => __DIR__ . '/../view/test/test2.phtml',
+            'application/test/test3' => __DIR__ . '/../view/test/test3.phtml',
             #layout
             'layout/layout' => __DIR__ . '/../view/layout/layout.phtml',
 			#404
@@ -102,7 +124,7 @@ return array(
             'ViewFeedStrategy', // register Feed renderer strategy
         ),*/
     ),
-    
+
     // Placeholder for console routes
     'console' => array(
         'router' => array(
@@ -114,14 +136,14 @@ return array(
     //'Zend\Db',
     'Db' => array(
         'driver' => 'Pdo',
-        'dsn' => 'mysql:dbname=nrru_db;host=nrrudb.cflaqvv1n1fo.ap-southeast-1.rds.amazonaws.com',   
-        'driver_options' => array( 
+        'dsn' => 'mysql:dbname=nrru_db;host=nrrudb.cflaqvv1n1fo.ap-southeast-1.rds.amazonaws.com',
+        'driver_options' => array(
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
         ),
         'username' => 'nrru_db',
-        'password' => 'nrru6969', 
+        'password' => 'nrru6969',
     ),
-    'service_manager' => array( 
+    'service_manager' => array(
         'factories' => array(
             'translator' => 'Zend\\I18n\\Translator\\TranslatorServiceFactory',
             'Zend\\Db\\Adapter\\Adapter' => 'Zend\\Db\\Adapter\\AdapterServiceFactory',
@@ -130,8 +152,8 @@ return array(
         \Zend\Db\Adapter\AdapterAbstractServiceFactory::class,
         ],
     ),
-    'language' => array(    
-        '1' =>['code'=>'en','name'=>'English','label'=>'English'],   
+    'language' => array(
+        '1' =>['code'=>'en','name'=>'English','label'=>'English'],
         '2' =>['code'=>'th','name'=>'Thai','label'=>'ภาษาไทย'],
     ),
-); 
+);

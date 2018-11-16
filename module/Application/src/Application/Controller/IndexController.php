@@ -24,7 +24,7 @@ $this->params()->fromFiles('paramname');
 */
 class IndexController extends AbstractActionController
 {
-################################################################################ 
+################################################################################
     public function __construct()
     {
         $this->cacheTime = 36000;
@@ -41,10 +41,10 @@ class IndexController extends AbstractActionController
         $view->action = $this->params()->fromRoute('action', 'index');
         $view->id = $this->params()->fromRoute('id', '');
         $view->page = $this->params()->fromQuery('page', 1);
-        return $view;       
-    } 
+        return $view;
+    }
 ################################################################################
-    public function indexAction() 
+    public function indexAction()
     {
         try
         {
@@ -57,7 +57,7 @@ class IndexController extends AbstractActionController
         }
     }
 ################################################################################
-    public function userAction() 
+    public function userAction()
     {
         try
         {
